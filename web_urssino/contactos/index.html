@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="../estilo_css/estilo.css">
+</head>
+<body>
+
+  <!-- Flecha para volver al inicio -->
+  <a href="../index.html" class="back-to-top">&#8593;</a>
+  <section class="form-login">
+    <h5>Contacto</h5>
+    <form id="loginForm" action="https://gmail.com" method="post" onsubmit="return validarFormulario()">
+      <input id="usuario" class="controls" type="text" name="usuario" value="" placeholder="Usuario">
+      <input id="contraseña" class="controls" type="password" name="contraseña" value="" placeholder="Contraseña">
+      <input class="buttons" type="submit" value="Ingresar">
+      <td align="center"><a href="../index.html">¿Olvidaste tu Contraseña?</a></td>
+    </form>
+      
+    </form>
+  </section>
+
+  <script>
+    function validarFormulario() {
+      var usuario = document.getElementById("usuario").value;
+      var contraseña = document.getElementById("contraseña").value;
+
+      if (usuario.trim() === "") {
+        alert("Por favor ingresa tu usuario.");
+        document.getElementById("usuario").style.borderColor = "red";
+        return false;
+      }
+
+      if (contraseña.trim() === "") {
+        alert("Por favor ingresa tu contraseña.");
+        document.getElementById("contraseña").style.borderColor = "red";
+        return false;
+      }
+
+      return true; // Envía el formulario si todos los campos están completos.
+    }
+  </script>
+</body>
+</html>
